@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 50);
-            $table->string('password', 50);
-            // $table->rememberToken();
-            $table->timestamps();
+        Schema::create('shop_user', function (Blueprint $table) {
+            $table->foreignId('shop_id')->constrained('shops');
+            $table->foreignId('user_id')->constrained('users');
+            $table->primary(['shop_id', 'user_id']); 
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('shop_user');
     }
 };
