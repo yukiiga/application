@@ -17,4 +17,16 @@ class ShopController extends Controller
         return view('shops.show')->with(['shop' => $shop]);
      //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
+    
+    public function create()
+    {
+    return view('shops.create');
+    }
+    
+    public function store(Request $request, Shop $shop)
+    {
+    $input = $request['shop'];
+    $shop->fill($input)->save();
+    return redirect('/shops/' . $shop->id);
+    }
 }

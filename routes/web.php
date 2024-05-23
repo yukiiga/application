@@ -24,7 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [ShopController::class, 'index']);
+Route::get('/shops/create', [ShopController::class, 'create']);
 Route::get('/shops/{shop}', [ShopController::class ,'show']);
+Route::post('/shops', [ShopController::class, 'store']);
+
 
 Route::controller(ShopController::class)->middleware(['auth'])->group(function(){
     Route::get('/register', 'index')->name('index');
