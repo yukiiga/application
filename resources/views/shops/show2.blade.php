@@ -7,14 +7,6 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                @endif
-            </div>
-        @endif
         <h1>Smart Shopper's</h1>
         <h2 class='title'>{{ $shop->name }}</h2>
         <div class="content">
@@ -33,7 +25,19 @@
             </div>
         </div>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/mypage">戻る</a>
+        </div>
+        <div class="mt-3 space-y-1">
+            <!-- Authentication -->
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <x-responsive-nav-link :href="route('logout')"
+                        onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                    {{ __('Log Out') }}
+                </x-responsive-nav-link>
+            </form>
         </div>
     </body>
 </html>

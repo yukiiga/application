@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    //店舗に対するリレーション
+    public function shops(){
+        //ユーザーは多数の店舗情報を登録
+        return $this->hasMany(Shop::class); 
+    }
 }
