@@ -18,12 +18,12 @@ class ShopSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-                'name' => '太郎', # varchar
-                'password' => Hash::make('xxx'), # varchar
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-         ]);
+        // DB::table('users')->insert([
+        //         'name' => 'yam', # varchar
+        //         'password' => Hash::make('xxx'), # varchar
+        //         'created_at' => new DateTime(),
+        //         'updated_at' => new DateTime(),
+        //  ]);
         DB::table('shops')->insert([
                 'maker_id' => '1', # bigint
                 'name' => 'スーパー', # varchar

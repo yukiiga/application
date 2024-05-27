@@ -19,22 +19,26 @@ use App\Http\Controllers\ShopController;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [ShopController::class, 'index']);
+
+// Route::get('/shops/create', [ShopController::class, 'create']);
 Route::get('/shops/{shop}', [ShopController::class ,'show']);
+// Route::post('/shops', [ShopController::class, 'store']);
 
 Route::controller(ShopController::class)->middleware(['auth'])->group(function(){
-    Route::get('/register', 'index')->name('index');
-    // Route::post('/posts', 'store')->name('store');
-    // Route::get('/posts/create', 'create')->name('create');
-    // Route::get('/posts/{post}', 'show')->name('show');
+    Route::get('/mypage', 'index2')->name('index2');
+    Route::post('/mypage/shops', 'store')->name('store');
+    Route::get('/mypage/create', 'create')->name('create');
+    Route::get('/mypage/shops/{shop}', 'show2')->name('show2');
     // Route::put('/posts/{post}', 'update')->name('update');
     // Route::delete('/posts/{post}', 'delete')->name('delete');
     // Route::get('/posts/{post}/edit', 'edit')->name('edit');
 });
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
