@@ -17,6 +17,7 @@
         @endif
         <h1>Smart Shopper's</h1>
         <h2>店舗一覧</h2>
+        <a href='/shops/create'>create</a>
         <div class='shops'>
             @foreach ($shops as $shop)
                 <div class='shop'>

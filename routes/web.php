@@ -29,6 +29,7 @@ Route::get('/', [ShopController::class, 'index']);
 Route::get('/shops/{shop}', [ShopController::class ,'show']);
 // Route::post('/shops', [ShopController::class, 'store']);
 
+
 Route::controller(ShopController::class)->middleware(['auth'])->group(function(){
     Route::get('/mypage', 'index2')->name('index2');
     Route::post('/mypage/shops', 'store')->name('store');

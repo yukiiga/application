@@ -33,7 +33,6 @@ class ShopController extends Controller
     public function create()
     {
         return view('shops.create');
-    }
     
     public function store(Request $request, Shop $shop)
     {
