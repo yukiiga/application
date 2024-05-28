@@ -42,9 +42,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    //店舗に対するリレーション
-    public function shops(){
+    //店舗に対するリレーション(作成)
+    // public function shops(){
+    //     //ユーザーは多数の店舗情報を登録
+    //     return $this->hasMany(Shop::class); 
+    // }
+    
+    //店舗に対するリレーション(編集)
+    public function shops2(){
         //ユーザーは多数の店舗情報を登録
-        return $this->hasMany(Shop::class); 
+        return $this->belongsToMany(Shop::class); 
     }
+    
+    //店舗チラシに対するリレーション(作成)
+    // public function flyers(){
+    //     //ユーザーは多数の店舗情報を登録
+    //     return $this->hasMany(Flyer::class); 
+    // }
 }

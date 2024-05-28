@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\FlyerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +36,14 @@ Route::controller(ShopController::class)->middleware(['auth'])->group(function()
     Route::post('/mypage/shops', 'store')->name('store');
     Route::get('/mypage/create', 'create')->name('create');
     Route::get('/mypage/shops/{shop}', 'show2')->name('show2');
-    // Route::put('/posts/{post}', 'update')->name('update');
     // Route::delete('/posts/{post}', 'delete')->name('delete');
-    // Route::get('/posts/{post}/edit', 'edit')->name('edit');
+    Route::get('/mypage/shops/{shop}/edit', 'edit')->name('edit');
+    Route::put('/mypage/shops/{shop}', 'update')->name('update');
+});
+
+Route::controller(FlyerController::class)->middleware(['auth'])->group(function(){
+    Route::get('/mypage/shops/{shop}/edit2', 'edit2')->name('edit2');
+    Route::post('/mypage/shops/{shop}', 'update2')->name('update2');
 });
 
 

@@ -14,14 +14,24 @@
                 <div>
                     <img src="{{ $shop->image_url }}" alt="画像が読み込めません。"/>
                 </div>
-                <h3>店舗情報</h3>
+                <div class="shop_edit">
+                    <h3>店舗情報</h3><a href="/mypage/shops/{{ $shop->id }}/edit">店舗情報を編集</a>
+                </div>
                 <h4>住所</h4>
                 <p>{{ $shop->address }}</p>
                 <h4>営業時間</h4>
                 <p>{{ $shop->open }}～{{ $shop->close }}</p>
                 <h4>電話番号</h4>
                 <p>{{ $shop->tel }}</p>
-                <h4>チラシ</h4>
+                <div class="flyer_edit">
+                    <h3>チラシ</h3><a href="/mypage/shops/{{ $shop->id }}/edit2">チラシを追加</a>
+                    <div>
+                        @foreach($shop->flyers as $flyer)   
+                            <img src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/>
+                            <p>{{ $flyer->from_period }}～{{ $flyer->to_period }}</p>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer">
