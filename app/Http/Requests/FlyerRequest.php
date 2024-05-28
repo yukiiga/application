@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ShopRequest extends FormRequest
+class FlyerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class ShopRequest extends FormRequest
     public function rules()
     {
         return [
-            'shop.name' => 'required|string|max:50',
-            'shop.address' => 'nullable|string|max:100',
-            'shop.tel' => 'nullable|string|max:50',
-            'shop.image_url' => 'nullable|file',
-            // 'shop.open' => 'nullable|time',
-            // 'shop.close' => 'nullable|time',
+            'image_url' => 'required|file',
+            'flyer.from_period' => 'required|date',
+            'flyer.to_period' => 'required|date',
         ];
     }
 }
