@@ -19,7 +19,7 @@
                 </div>
                 <div class="open">
                     <h2>期間</h2>
-                     <input type="date" name="flyer[from_period]" value="{{ $flyer->from_period }}"/>~<input type="date" name="flyer[to_period]" value="{{ $flyer->to_period }}"/>
+                    <input type="date" name="flyer[from_period]" value="{{ $flyer->from_period }}"/>~<input type="date" name="flyer[to_period]" value="{{ $flyer->to_period }}"/>
                     <p class="open__error" style="color:red">{{ $errors->first('flyer.from_period') }}</p>
                     <p class="close__error" style="color:red">{{ $errors->first('flyer.to_period') }}</p>
                 </div>

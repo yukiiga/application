@@ -43,4 +43,13 @@ class FlyerController extends Controller
     
         return redirect('/mypage/shops/' . $shop->id);
     }
+    
+    public function update3(Shop $shop, Flyer $flyer)
+    {
+        $input_user = auth()->id();
+        
+        $flyer->users()->attach([$input_user]);
+    
+        return redirect('/mypage/shops/' . $shop->id);
+    }
 }

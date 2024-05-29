@@ -54,6 +54,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Shop::class); 
     }
     
+    public function flyers(){
+        //ユーザーは多数の店舗情報を登録
+        return $this->belongsToMany(Flyer::class); 
+    }
     //店舗チラシに対するリレーション(作成)
     // public function flyers(){
     //     //ユーザーは多数の店舗情報を登録
