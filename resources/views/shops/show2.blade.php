@@ -26,9 +26,9 @@
                 <div class="flyer_edit">
                     <h3>チラシ</h3><a href="/mypage/shops/{{ $shop->id }}/edit2">チラシを追加</a>
                     <div>
-                        @foreach($shop->flyers as $flyer)   
-                            <img src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/>
-                            <p>{{ $flyer->from_period }}～{{ $flyer->to_period }}</p>
+                        @foreach($shop->flyers as $flyer)
+                            <a href="/mypage/shops/{{ $shop->id }}/flyers/{{ $flyer->id }}"><img src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/></a>
+                            <p>期間：{{ $flyer->from_period }}～{{ $flyer->to_period }}</p>
                         @endforeach
                     </div>
                 </div>

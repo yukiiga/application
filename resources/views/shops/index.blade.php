@@ -15,7 +15,7 @@
                 @endif
             </div>
         @endif
-        <h1>Smart Shopper's</h1>
+        <h1 >Smart Shopper's</h1>
         <h2>店舗一覧</h2>
         <div class='shops'>
             @foreach ($shops as $shop)

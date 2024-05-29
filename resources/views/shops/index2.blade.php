@@ -16,12 +16,7 @@
                     <h3 class='title'>
                         <a href="/mypage/shops/{{ $shop->id }}">{{ $shop->name }}</a>
                     </h3>
-                        <!--<h3 class='title'>{{ $shop->name }}</h3>-->
-                        <!--<p class='image_url'>{{ $shop->image_url }}</p>-->
                     <p class='address'>{{ $shop->address }}</p>
-                        <!--<p class='open'>{{ $shop->open }}</p>-->
-                        <!--<p class='close'>{{ $shop->close }}</p>-->
-                        <!--<p class='tel'>{{ $shop->tel }}</p>-->
                 </div>
             @endforeach
         </div>
@@ -29,6 +24,7 @@
             {{ $shops->links() }}
         </div>
         <a href='/mypage/create'>create</a>
+        <a href='/mypage/myflyers'>Myチラシ一覧へ</a>
         <div class="mt-3 space-y-1">
                 <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">

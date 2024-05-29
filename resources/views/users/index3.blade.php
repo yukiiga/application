@@ -8,26 +8,25 @@
     </head>
     <body>
         <h1>Smart Shopper's</h1>
-        <h2 class='title'>{{ $shop->name }}のチラシ</h2>
-        <div class="content">
-            <div class="content__shop">
-                <div>
+        <p class='login'>ログインユーザー:{{ Auth::user()->name }}</p>
+        <h2>Myチラシ一覧</h2>
+        <div class='shops'>
+            @foreach ($flyers as $flyer)
+                <div class='shop'>
                     <img src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/>
+                    <h4>期間</h4>
+                    <p>{{ $flyer->from_period }}～{{ $flyer->to_period }}</p>
                 </div>
-                <h4>期間</h4>
-                <p>{{ $flyer->from_period }}～{{ $flyer->to_period }}</p>
-                <form action="/mypage/shops/{{ $shop->id }}/flyers/{{ $flyer->id }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <input type="submit" value="Myチラシ登録">
-                </form>
-            </div>
+            @endforeach
+        </div>
+        <div class='paginate'>
+            {{ $flyers->links() }}
         </div>
         <div class="footer">
             <a href="/mypage">戻る</a>
         </div>
         <div class="mt-3 space-y-1">
-            <!-- Authentication -->
+                <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
