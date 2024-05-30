@@ -25,12 +25,6 @@ class Shop extends Model
         return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
     
-    //ユーザに対するリレーション(作成)
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
-
     //ユーザに対するリレーション(編集)
     public function user2()
     {
@@ -40,5 +34,10 @@ class Shop extends Model
     public function flyers()
     {
         return $this->hasMany(Flyer::class);
+    }
+    
+    public function merchandises()
+    {
+        return $this->hasMany(Merchandises::class);
     }
 }

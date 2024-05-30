@@ -42,11 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    //店舗に対するリレーション(作成)
-    // public function shops(){
-    //     //ユーザーは多数の店舗情報を登録
-    //     return $this->hasMany(Shop::class); 
-    // }
+    public function getPaginateByLimit2(int $limit_count = 1)
+    {
+        return $this->merchandises()->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
     
     //店舗に対するリレーション(編集)
     public function shops2(){
@@ -55,12 +54,13 @@ class User extends Authenticatable
     }
     
     public function flyers(){
-        //ユーザーは多数の店舗情報を登録
+        //ユーザーは多数のMyチラシを登録
         return $this->belongsToMany(Flyer::class); 
     }
-    //店舗チラシに対するリレーション(作成)
-    // public function flyers(){
-    //     //ユーザーは多数の店舗情報を登録
-    //     return $this->hasMany(Flyer::class); 
-    // }
+    
+    public function merchandises(){
+        //ユーザーは多数の買い物リストを登録
+        return $this->hasMany(Merchandise::class); 
+    }
+
 }

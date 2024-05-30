@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FlyerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MerchandiseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,16 +27,13 @@ use App\Http\Controllers\UserController;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [ShopController::class, 'index']);
-
-// Route::get('/shops/create', [ShopController::class, 'create']);
 Route::get('/shops/{shop}', [ShopController::class ,'show']);
-// Route::post('/shops', [ShopController::class, 'store']);
 
 
 Route::controller(ShopController::class)->middleware(['auth'])->group(function(){
-    Route::get('/mypage', 'index2')->name('index2');
+    Route::get('/mypage/shops', 'index4')->name('index4');
     Route::post('/mypage/shops', 'store')->name('store');
-    Route::get('/mypage/create', 'create')->name('create');
+    Route::get('/mypage/shops/create', 'create')->name('create');
     Route::get('/mypage/shops/{shop}', 'show2')->name('show2');
     // Route::delete('/posts/{post}', 'delete')->name('delete');
     Route::get('/mypage/shops/{shop}/edit', 'edit')->name('edit');
@@ -51,6 +49,12 @@ Route::controller(FlyerController::class)->middleware(['auth'])->group(function(
 
 Route::controller(UserController::class)->middleware(['auth'])->group(function(){
     Route::get('/mypage/myflyers', 'index3')->name('index3');
+});
+
+Route::controller(MerchandiseController::class)->middleware(['auth'])->group(function(){
+    Route::get('/mypage', 'index2')->name('index2');
+    Route::get('/mypage/shops/lists/create2', 'create2')->name('create2');
+    Route::post('/mypage', 'store2')->name('store2');
 });
 
 

@@ -30,6 +30,12 @@
                 <h4>電話番号</h4>
                 <p>{{ $shop->tel }}</p>
                 <h4>チラシ</h4>
+                <div>
+                    @foreach($shop->flyers as $flyer)
+                            <img src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/></a>
+                            <p>期間：{{ $flyer->from_period }}～{{ $flyer->to_period }}</p>
+                    @endforeach
+                </div>
             </div>
         </div>
         <div class="footer">
