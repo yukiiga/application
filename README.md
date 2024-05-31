@@ -1,5 +1,8 @@
-<h1 align="center">Smart Shopper's</h1>
-<p align="center">物価高の時代<br>あなたを買い物上手にしてくれるサービスです。</p>
+<h1>Smart Shopper's</h1>
+Smart Shopper'sは、商品をできるだけ安く購入するために
+
+よく利用するお店のチラシ情報を管理するアプリです。
+
 
 ## :globe_with_meridians:アプリ URL
 
