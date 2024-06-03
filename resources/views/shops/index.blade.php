@@ -4,19 +4,19 @@
         <meta charset="utf-8">
         <title>Smart Shopper's</title>
         <!-- Fonts -->
-        <link rel="stylesheet" href="{{ asset('../../.././public/css/index.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <h1 class='title'>Smart Shopper's</h1>
         @if (Route::has('login'))
             <div>
-                <a href="{{ route('login') }}">Log in</a>
+                <a href="{{ route('login') }}" class='login'>ログイン</a>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" >Register</a>
+                    <a href="{{ route('register') }}" class='register'>新規登録</a>
                 @endif
             </div>
         @endif
-        <h1 >Smart Shopper's</h1>
         <h2>店舗一覧</h2>
         <div class='shops'>
             @foreach ($shops as $shop)

@@ -1,7 +1,77 @@
 body {
-    background-color: #4EC199;
+    background-color: #FFFFEE;
 }
 
-h1, p {
-    color: #D6FEE2;
+.title {
+	font-size:3em;
+	text-align:left;
+	position: relative;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #fffff0;
+	text-shadow: 
+		0 0.05em 0.08em rgba(0,0,0,0.7);
+}
+
+/*h1 {*/
+/*	font-size:5em;*/
+/*	text-align:center;*/
+/*	line-height:0.95em;*/
+/*	font-weight:bold;*/
+/*	color: transparent;*/
+/*	background: repeating-linear-gradient( -45deg, #FF3D00 0% 50%, #0091EA 50%*/
+/*		 100% );*/
+/*	-webkit-background-clip: text;*/
+/*}*/
+
+/*h1 {*/
+/*	font-size:5em;*/
+/*	text-align:center;*/
+/*	line-height:0.95em;*/
+/*	font-weight:bold;*/
+/*	color: transparent;*/
+/*	background: linear-gradient( 45deg, #DD2C00 0% 40%, #01579B 60% 100% );*/
+/*	-webkit-background-clip: text;*/
+/*}*/
+
+.login {
+    text-align:center;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-left: solid 4px #AAAAAA;
+    border-right: solid 4px #AAAAAA;
+    color: #444444;
+    background: #EEEEEE;
+    transition: .4s;
+}
+
+.login:hover {
+    background: #668ad8;
+    color: #FFF;
+}
+
+.register {
+    text-align:right;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-left: solid 4px #AAAAAA;
+    border-right: solid 4px #AAAAAA;
+    color: #444444;
+    background: #EEEEEE;
+    transition: .4s;
+}
+
+.register:hover {
+  background: #668ad8;
+  color: #FFF;
+}
+
+.shops {
+    font-family: sans-serif;
 }
