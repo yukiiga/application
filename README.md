@@ -36,4 +36,4 @@ Smart Shopper'sは、商品をできるだけ安く購入するために
 - Amazon EC2(Amazon Linux2(t2.micro))
 
 ## ER図
-
+![ER図_ver1 drawio](https://github.com/yukiiga/smart-shoppers/assets/131857292/a492826b-5cc7-461a-8f93-02fee62b73f0)
