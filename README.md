@@ -22,6 +22,18 @@ Smart Shopper'sは、商品をできるだけ安く購入するために
 ## 主な機能
 
 ## 使用技術
+#### バックエンド
+- PHP 8.2.9
+
+#### フロントエンド
+- CSS
+- JavaScript
+
+#### データベース
+- MariaDB 10.5.23
+
+#### インフラストラクチャー
+- Amazon EC2(Amazon Linux2(t2.micro))
 
 ## ER図
 
