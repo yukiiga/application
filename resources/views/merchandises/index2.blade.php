@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title>Smart Shopper's</title>
         <!-- Fonts -->
+        <link rel="stylesheet" href="{{ asset('css/index2.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Smart Shopper's</h1>
-        <p class='login'>ログインユーザー:{{ Auth::user()->name }}</p>
+        <h1 class='title'>Smart Shopper's</h1>
+        <div class='login'>{{ Auth::user()->name }}</div>
         <h2>買い物リスト</h2>
         <div class='lists'>
             @foreach ($merchandises as $merchandise)
@@ -23,10 +24,12 @@
         <div class='paginate'>
             {{ $merchandises->links() }}
         </div>
-        <a href='/mypage/shops/lists/create2'>買い物リストを追加</a>
-        <a href='/mypage/shops'>店舗一覧</a>
-        <a href='/mypage/myflyers'>Myチラシ一覧</a>
-        <div class="mt-3 space-y-1">
+        <div class='links'>
+            <a href='/mypage/shops/lists/create2' class='lists'>買い物リストを追加</a>
+            <a href='/mypage/shops' class='index'>店舗一覧</a>
+            <a href='/mypage/myflyers' class='flyers'>Myチラシ一覧</a>
+        </div>
+        <div class="logout">
                 <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

@@ -24,6 +24,7 @@ class FlyerController extends Controller
     
     public function update2(FlyerRequest $request, Flyer $flyer, Shop $shop)
     {
+        dd($request);
         
         $input = $request['flyer'];
         

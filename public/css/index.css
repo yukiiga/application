@@ -1,5 +1,12 @@
 body {
-    background-color: #FFFFEE;
+    background-color: #EEEEEE;
+}
+
+h2 {
+  color: #364e96;/*文字色*/
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px #364e96;/*上線*/
+  border-bottom: solid 3px #364e96;/*下線*/
 }
 
 .title {
@@ -33,9 +40,14 @@ body {
 /*	background: linear-gradient( 45deg, #DD2C00 0% 40%, #01579B 60% 100% );*/
 /*	-webkit-background-clip: text;*/
 /*}*/
+.use {
+    text-align:right;
+    position: absolute;
+    left:  1280px;
+    top: 20px;  
+}
 
-.login {
-    text-align:center;
+.use a.login {
     position: relative;
     display: inline-block;
     font-weight: bold;
@@ -44,17 +56,16 @@ body {
     border-left: solid 4px #AAAAAA;
     border-right: solid 4px #AAAAAA;
     color: #444444;
-    background: #EEEEEE;
+    background: #FFFFEE;
     transition: .4s;
 }
 
-.login:hover {
+.use a.login:hover {
     background: #668ad8;
     color: #FFF;
 }
 
-.register {
-    text-align:right;
+.use a.register {
     position: relative;
     display: inline-block;
     font-weight: bold;
@@ -63,11 +74,11 @@ body {
     border-left: solid 4px #AAAAAA;
     border-right: solid 4px #AAAAAA;
     color: #444444;
-    background: #EEEEEE;
+    background: #FFFFEE;
     transition: .4s;
 }
 
-.register:hover {
+.use a.register:hover {
   background: #668ad8;
   color: #FFF;
 }

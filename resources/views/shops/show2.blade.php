@@ -2,20 +2,21 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ asset('css/show2.css') }}">
         <title>Smart Shopper's</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Smart Shopper's</h1>
-        <h2 class='title'>{{ $shop->name }}</h2>
+        <h1 class='title'>Smart Shopper's</h1>
+        <h2 class='name'>{{ $shop->name }}</h2>
         <div class="content">
             <div class="content__shop">
                 <div>
                     <img src="{{ $shop->image_url }}" alt="画像が読み込めません。"/>
                 </div>
                 <div class="shop_edit">
-                    <h3>店舗情報</h3><a href="/mypage/shops/{{ $shop->id }}/edit">店舗情報を編集</a>
+                    <h3>店舗情報</h3><a href="/mypage/shops/{{ $shop->id }}/edit" class="edit">店舗情報を編集</a>
                 </div>
                 <h4>住所</h4>
                 <p>{{ $shop->address }}</p>
@@ -24,7 +25,7 @@
                 <h4>電話番号</h4>
                 <p>{{ $shop->tel }}</p>
                 <div class="flyer_edit">
-                    <h3>チラシ</h3><a href="/mypage/shops/{{ $shop->id }}/edit2">チラシを追加</a>
+                    <h3>チラシ</h3><a href="/mypage/shops/{{ $shop->id }}/edit2" id="add">チラシを追加</a>
                     <div>
                         @foreach($shop->flyers as $flyer)
                             <a href="/mypage/shops/{{ $shop->id }}/flyers/{{ $flyer->id }}"><img src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/></a>
@@ -37,7 +38,7 @@
         <div class="footer">
             <a href="/mypage">戻る</a>
         </div>
-        <div class="mt-3 space-y-1">
+        <div class="logout">
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

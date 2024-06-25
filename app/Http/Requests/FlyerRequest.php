@@ -24,7 +24,7 @@ class FlyerRequest extends FormRequest
     public function rules()
     {
         return [
-            'image_url' => 'required|file',
+            'flyer.image_url' => 'required|file',
             'flyer.from_period' => 'required|date',
             'flyer.to_period' => 'required|date',
         ];

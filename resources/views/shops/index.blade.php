@@ -10,7 +10,7 @@
     <body>
         <h1 class='title'>Smart Shopper's</h1>
         @if (Route::has('login'))
-            <div>
+            <div class='use'>
                 <a href="{{ route('login') }}" class='login'>ログイン</a>
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class='register'>新規登録</a>
@@ -21,7 +21,7 @@
         <div class='shops'>
             @foreach ($shops as $shop)
                 <div class='shop'>
-                    <h3 class='title'>
+                    <h3 class='name'>
                         <a href="/shops/{{ $shop->id }}">{{ $shop->name }}</a>
                     </h3>
                     <p class='address'>{{ $shop->address }}</p>
