@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title>Smart Shopper's</title>
         <!-- Fonts -->
+        <link rel="stylesheet" href="{{ asset('css/index3.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Smart Shopper's</h1>
-        <p class='login'>ログインユーザー:{{ Auth::user()->name }}</p>
+        <h1 class='title'>Smart Shopper's</h1>
+        <p class='login'>{{ Auth::user()->name }}</p>
         <h2>Myチラシ一覧</h2>
         <div class='shops'>
             @foreach ($flyers as $flyer)
@@ -25,7 +26,7 @@
         <div class="footer">
             <a href="/mypage">戻る</a>
         </div>
-        <div class="mt-3 space-y-1">
+        <div class="logout">
                 <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

@@ -1,0 +1,114 @@
+body {
+    background-color: #EEEEEE;
+}
+
+h2 {
+  color: #364e96;/*文字色*/
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px #364e96;/*上線*/
+  border-bottom: solid 3px #364e96;/*下線*/
+}
+
+.title {
+	font-size:3em;
+	text-align:left;
+	position: relative;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #fffff0;
+	text-shadow: 
+		0 0.05em 0.08em rgba(0,0,0,0.7);
+}
+
+.login {
+  text-align:right;
+  position: absolute;
+  left:  1400px;
+  top: 20px;  
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+
+.logout a {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  margin-top: 50px;
+  text-decoration: none;
+  color: #EEEEEE;
+  background: #AAAAAA;
+  transition: .4s;
+}
+
+.logout a:hover {
+  background: #00bcd4;
+  color: white;
+}
+
+.shops {
+    font-family: sans-serif;
+}
+
+/*.create a{*/
+/*  text-align: center;*/
+/*  gap: 6px 4px;*/
+/*  padding: 7px 20px;*/
+/*  border-radius: 25px;*/
+/*  text-decoration: none;*/
+/*  color: #FFF;*/
+/*  background-image: linear-gradient(45deg, #000080 0%, 	#0000AA 100%);*/
+/*  transition: .4s;*/
+/*}*/
+
+/*.create a:hover {*/
+/*  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);*/
+/*}*/
+
+/*.back a{*/
+/*  padding: 7px 20px;*/
+/*  border-radius: 25px;*/
+/*  text-decoration: none;*/
+/*  color: #FFF;*/
+/*  background-image: linear-gradient(45deg, #000080 0%, 	#0000AA 100%);*/
+/*  transition: .4s;*/
+/*}*/
+
+/*.back a:hover{*/
+/*  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);*/
+/*}*/
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 6px 4px;
+}
+
+.links a.create {
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #000080 0%, 	#0000AA 100%);
+  transition: .4s;
+}
+
+.links a.create:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+.back {
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #000080 0%, 	#0000AA 100%);
+  transition: .4s;
+}
+
+.back:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
