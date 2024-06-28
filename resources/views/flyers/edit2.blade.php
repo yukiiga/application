@@ -10,25 +10,25 @@
     <body>
         <h1 class="title">Smart Shopper's</h1>
         <form action="/mypage/shops/{{ $shop->id }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="Form">
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label">
-                            <span class="Form-Item-Label-Required">必須</span>チラシ
-                        </p>
-                        <input type="file" name="image_url" value="{{ $flyer->image_url }}">
-                        <p class="title__error" style="color:red">{{ $errors->first('image_url') }}</p>
-                    </div>
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label">
-                            <span class="Form-Item-Label-Required">必須</span>期間
-                        </p>
-                        <input type="date" class="Form-Item-Input" name="flyer[from_period]" value="{{ $flyer->from_period }}"/>~<input type="date" class="Form-Item-Input" name="flyer[to_period]" value="{{ $flyer->to_period }}"/>
-                        <p class="open__error" style="color:red">{{ $errors->first('flyer.from_period') }}</p>
-                        <p class="close__error" style="color:red">{{ $errors->first('flyer.to_period') }}</p>
-                    </div>
-                    <input type="submit" class="Form-Btn" value="保存する">
+            @csrf
+            <div class="Form">
+                <div class="Form-Item">
+                    <p class="Form-Item-Label">
+                        <span class="Form-Item-Label-Required">必須</span>チラシ
+                    </p>
+                    <input type="file" name="flyer[image_url]" value="{{ $flyer->image_url }}"/>
+                    <p class="file__error" style="color:red">{{ $errors->first('flyer.image_url') }}</p>
                 </div>
+                <div class="Form-Item">
+                    <p class="Form-Item-Label">
+                        <span class="Form-Item-Label-Required">必須</span>期間
+                    </p>
+                    <input type="date" class="Form-Item-Input" name="flyer[from_period]" value="{{ $flyer->from_period }}"/>~<input type="date" class="Form-Item-Input" name="flyer[to_period]" value="{{ $flyer->to_period }}"/>
+                    <p class="open__error" style="color:red">{{ $errors->first('flyer.from_period') }}</p>
+                    <p class="close__error" style="color:red">{{ $errors->first('flyer.to_period') }}</p>
+                </div>
+                <input type="submit" class="Form-Btn" value="保存する">
+            </div>
         </form>
         <div class="back">
             <a href="/mypage/shops/{{ $shop->id }}">戻る</a>

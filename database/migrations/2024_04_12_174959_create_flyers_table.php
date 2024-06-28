@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('maker_id')->constrained('users');
             $table->foreignId('shop_id')->constrained('shops');
-            $table->string('image_url', 100);
-            $table->date('from_period');
-            $table->date('to_period');
+            $table->string('image_url', 100)->nullable();;
+            $table->date('from_period')->nullable();;
+            $table->date('to_period')->nullable();;
             $table->timestamps();
             $table->softDeletes();
         });
