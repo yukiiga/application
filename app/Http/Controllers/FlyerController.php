@@ -24,20 +24,19 @@ class FlyerController extends Controller
     
     public function update2(FlyerRequest $request, Flyer $flyer, Shop $shop)
     {
-        dd($request);
         
         $input = $request['flyer'];
         
         // 画像が送信されたかどうかを確認
-        if ($request->hasFile('image_url')) {
+        if ($request->hasFile('flyer.image_url')) {
             // cloudinaryへ画像を送信し、画像のURLを$image_urlに代入
-            $image_url = Cloudinary::upload($request->file('image_url')->getRealPath())->getSecurePath();
+            $image_url = Cloudinary::upload($request->file('flyer.image_url')->getRealPath())->getSecurePath();
         } else {
             // 画像が送信されなかった場合、$image_urlをnullに設定
             $image_url = null;
         }
 
-        $input += ['image_url' => $image_url];  //追加
+        $input['image_url']=$image_url;  //追加
         $input['maker_id'] = auth()->id();
         $input['shop_id'] = $shop->id;
         $flyer->fill($input)->save();
