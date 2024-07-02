@@ -3,30 +3,29 @@
     <head>
         <meta charset="utf-8">
         <title>Smart Shopper's</title>
+        <link rel="stylesheet" href="{{ asset('css/show3.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Smart Shopper's</h1>
-        <h2 class='title'>{{ $shop->name }}のチラシ</h2>
+        <h1 class='title'>Smart Shopper's</h1>
+        <h2 class='name'>{{ $shop->name }}のチラシ</h2>
         <div class="content">
-            <div class="content__shop">
                 <div>
-                    <img src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/>
+                    <img class ="Image" src="{{ $flyer->image_url }}" alt="画像が読み込めません。"/>
                 </div>
-                <h4>期間</h4>
+                <h4 class ="during">期間</h4>
                 <p>{{ $flyer->from_period }}～{{ $flyer->to_period }}</p>
                 <form action="/mypage/shops/{{ $shop->id }}/flyers/{{ $flyer->id }}" method="POST">
                     @csrf
                     @method('PUT')
                     <input type="submit" value="Myチラシ登録">
                 </form>
-            </div>
         </div>
         <div class="footer">
             <a href="/mypage">戻る</a>
         </div>
-        <div class="mt-3 space-y-1">
+        <div class="logout">
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

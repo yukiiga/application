@@ -6,20 +6,22 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('css/index2.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
     </head>
     <body>
         <h1 class='title'>Smart Shopper's</h1>
         <div class='login'>{{ Auth::user()->name }}</div>
         <h2>買い物リスト</h2>
-        <div class='lists'>
-            @foreach ($merchandises as $merchandise)
-                <div class='merchandise'>
-                    <h4 class='name'>{{ $merchandise->name}}</h4>
-                    <p class='merchandise'>{{ $merchandise->price}}円</p>
-                    <a href="/mypage/shops/{{ $merchandise->shop->id }}">{{ $merchandise->shop->name}}</a>
-                    <p class='day'>{{ $merchandise->day}}</p>
-                </div>
-            @endforeach
+        <div class='l'>
+            <ul class='lists'>
+                @foreach ($merchandises as $merchandise)
+                    <li class='merchandise'>
+                        <h3 class='name'>{{ $merchandise->name}} {{ $merchandise->price}}円</h4>
+                        <a href="/mypage/shops/{{ $merchandise->shop->id }}">{{ $merchandise->shop->name}}</a>
+                        <p class='day'>({{ $merchandise->day}})</p>
+                    </li>
+                @endforeach
+            </ul>
         </div>
         <div class='paginate'>
             {{ $merchandises->links() }}
