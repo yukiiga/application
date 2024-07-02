@@ -42,9 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    public function getPaginateByLimit2(int $limit_count = 1)
+    public function getPaginateByLimit2(int $limit_count = 10)
     {
-        return $this->merchandises()->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this->merchandises()->orderBy('day')->paginate($limit_count);
     }
     
     //店舗に対するリレーション(編集)
